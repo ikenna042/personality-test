@@ -1,0 +1,173 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.body {
+    width: 60%;
+    margin-top: 10%;
+    background: #e6ebf2;
+    padding: 40px 40px 80px 40px;
+    font-family: 'Roboto', sans-serif;
+    color: #2c2d2e;
+    border-radius: 10px;
+}
+
+.question-count {
+    font-weight: lighter;
+}
+
+.question {
+    font-weight: normal;
+    font-family: sans-serif;
+}
+
+.instruction {
+    font-size: smaller;
+    font-style: italic;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+}
+
+.option-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    background: white;
+    padding: 15px 20px;
+    border: #9ea3a8 solid 1px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.letter {
+    font-size: small;
+    font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
+    margin-right: 10px;
+    background: #e6ebf2;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+// selected option
+.option-container-selected {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    background: white;
+    padding: 15px 20px;
+    border: #BC8F8F solid 1px;
+    border-radius: 5px;
+}
+
+.letter-selected {
+    font-size: small;
+    font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
+    margin-right: 10px;
+    background: #BC8F8F;
+    padding: 5px;
+    border-radius: 3px;
+    color: white;
+}
+
+// btn single
+.button-active {
+    background-color: #0b5118;
+    border: none;
+    color: white;
+    padding: 20px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 20px;
+}
+.button-active:hover {
+    background-color: #436247;
+}
+.button-active:active {
+    background-color: #0b5118;
+    box-shadow: 0 5px #526b56;
+    transform: translateY(4px);
+  }
+
+.button-disabled {
+    background-color: rgb(211, 215, 211);
+    border: none;
+    color: white;
+    padding: 20px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+// btn multiple
+
+.button-next-active {
+    background-color: #0b5118;
+    border: none;
+    color: white;
+    padding: 20px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 48%;
+    margin-top: 20px;
+    float: right;
+}
+
+.button-next-active:hover {
+    background-color: #436247;
+}
+.button-next-active:active {
+    background-color: #0b5118;
+    box-shadow: 0 5px #526b56;
+    transform: translateY(4px);
+  }
+
+.button-next-disabled {
+    background-color: rgb(211, 215, 211);
+    border: none;
+    color: white;
+    padding: 20px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 48%;
+    margin-top: 20px;
+    float: right;
+}
+
+.button-previous {
+    background-color: white;
+    border: #0b5118 solid 1px;
+    color: #2c2d2e;
+    padding: 19px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 48%;
+    margin-top: 20px;
+}
+
+.button-previous:hover {
+    background-color: #cddbcf;
+}
