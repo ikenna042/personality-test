@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.body {
+    width: 60%;
+    margin-top: 10%;
+    background: #e6ebf2;
+    padding: 40px 40px 80px 40px;
+    font-family: 'Verdana';
+    color: #222;
+    border-radius: 10px;
+}
+
+.button {
+    background-color: #0b5118;
+    border: none;
+    color: white;
+    padding: 20px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 20px;
+}
+.button:hover {
+    background-color: #436247;
+}
+.button:active {
+    background-color: #0b5118;
+    box-shadow: 0 5px #526b56;
+    transform: translateY(4px);
+  }
+
+  p {
+    line-height: 2.0;
+  }

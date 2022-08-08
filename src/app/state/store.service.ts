@@ -79,4 +79,25 @@ export class StoreService extends ObservableStore<AppStore> {
       answers: []
     })
   }
+
+  checkResult() {
+    // calculate personality
+    const answers = this.getState().answers;
+    const results = this.getState().results;
+    let a = 0;
+    let b = 0;
+    let c = 0;
+    answers.forEach(answer => {
+      if (answer.letter === 'A') {
+        a++;
+      } else if (answer.letter === 'B') {
+        b++;
+      } else {
+        c++;
+      }
+    });
+    this.setState({
+      currentResult: a > 2 ? results[0] : results[1]
+    })
+  }
 }
