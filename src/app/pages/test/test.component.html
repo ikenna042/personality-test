@@ -1,14 +1,14 @@
 <div class="container">
-    <div class="body">
-        <span class="question-count">Question 1/14</span>
-        <h2 class="question"> {{ question }}:</h2>
+    <div class="body" *ngIf="currentQuestion">
+        <span class="question-count">Question {{ currentQuestionCount }}/{{ totalQuestions }}</span>
+        <h2 class="question"> {{ currentQuestion.question }}:</h2>
         <span class="instruction">All questions are required</span>
-        <div class="options" *ngFor="let item of options">
-            <div *ngIf="currentAnswer !== item" class="option-container" (click)="optionSelected(item)">
+        <div class="options" *ngFor="let item of currentQuestion.options">
+            <div *ngIf="currentAnswer.optionId !== item.id" class="option-container" (click)="optionSelected(item)">
                 <div class="letter">{{ item.letter }}</div>
                 <div class="option"> {{ item.value }} </div>
             </div>
-            <div *ngIf="currentAnswer == item" class="option-container-selected">
+            <div *ngIf="currentAnswer.optionId == item.id" class="option-container-selected">
                 <div class="letter-selected">{{ item.letter }}</div>
                 <div class="option"> {{ item.value }} </div>
             </div>
@@ -16,15 +16,23 @@
         
         <div class="button-container">
             <!-- current question count === 1 -->
-            <div *ngIf="currentQuestionCount == 1" class="btn-single">
-                <button *ngIf="currentAnswer" class="button-active" (click)="next()">Next question</button>
-                <button *ngIf="!currentAnswer" class="button-disabled">Next question</button>
+            <div *ngIf="answers.length !== totalQuestions">
+                <div *ngIf="currentQuestionCount == 1" class="btn-single">
+                    <button *ngIf="currentAnswer.optionId" class="button-active" (click)="next()">Next question</button>
+                    <button *ngIf="!currentAnswer.optionId" class="button-disabled" (click)="next()">Next question</button>
+                    <!-- <button *ngIf="!currentAnswer.optionId && currentQuestionCount !== totalQuestions" class="button-disabled">Next question</button>
+                    <button *ngIf="!currentAnswer.optionId && currentQuestionCount === totalQuestions" class="button-active">Sumit</button> -->
+                </div>
+                <div *ngIf="currentQuestionCount > 1" class="btn-double">
+                    <button class="button-previous" (click)="previous()">Previous</button>
+                    <button *ngIf="currentAnswer.optionId && currentQuestionCount !== totalQuestions" class="button-next-active" (click)="next()">Next question</button>
+                    <button *ngIf="currentAnswer.optionId && currentQuestionCount === totalQuestions" class="button-next-active" (click)="next()">Submit</button>
+                    <button *ngIf="!currentAnswer.optionId && currentQuestionCount !== totalQuestions" class="button-next-disabled">Next question</button>
+                    <button *ngIf="!currentAnswer.optionId && currentQuestionCount === totalQuestions" class="button-next-disabled">Submit</button>
+                </div>
             </div>
-            <div *ngIf="currentQuestionCount > 1" class="btn-double">
-                <button class="button-previous" (click)="previous()">Previous</button>
-                <button *ngIf="currentAnswer" class="button-next-active" (click)="next()">Next question</button>
-                <button *ngIf="!currentAnswer" class="button-next-disabled">Next question</button>
-            </div>
+            
+            <button *ngIf="answers.length === totalQuestions" class="button-active" (click)="finish()">Show Result</button>
             
         </div>
 </div>

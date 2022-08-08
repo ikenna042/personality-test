@@ -1,0 +1,121 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "To prepare for a night out...",
+            "options": [
+                {
+                    "id": 1,
+                    "letter": "A",
+                    "value": "I buy the latest outfit, tell my friends, then dance the night away."
+                },
+                {
+                    "id": 2,
+                    "letter": "B",
+                    "value": "Call a few of my closest friends to see if they will be there."
+                },
+                {
+                    "id": 3,
+                    "letter": "C",
+                    "value": "Prepare? My friends have to drag me out most nights."
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "Being around people makes me feel...",
+            "options": [
+                {
+                    "id": 4,
+                    "letter": "A",
+                    "value": "Like I'm alive!"
+                },
+                {
+                    "id": 5,
+                    "letter": "B",
+                    "value": "Inspired. I feed off of others' energy but there are times when I'd rather be alone."
+                },
+                {
+                    "id": 6,
+                    "letter": "C",
+                    "value": "A bit exhausted. Being around others can be draining."
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "When given a choice between working as part of a team or working as a group, I would prefer to...",
+            "options": [
+                {
+                    "id": 7,
+                    "letter": "A",
+                    "value": "Work with as many people as possible."
+                },
+                {
+                    "id": 8,
+                    "letter": "B",
+                    "value": "Work as part of a small group."
+                },
+                {
+                    "id": 9,
+                    "letter": "C",
+                    "value": "Work by myself."
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "What's your idea of the perfect date?",
+            "options": [
+                {
+                    "id": 10,
+                    "letter": "A",
+                    "value": "A live concert in Central Park."
+                },
+                {
+                    "id": 11,
+                    "letter": "B",
+                    "value": "Dinner and a Broadway show."
+                },
+                {
+                    "id": 12,
+                    "letter": "C",
+                    "value": "Wine and Netflix."
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "During parties or social gatherings, I tend to...",
+            "options": [
+                {
+                    "id": 13,
+                    "letter": "A",
+                    "value": "Talk to as many people as I can. I've been called a social butterfly."
+                },
+                {
+                    "id": 14,
+                    "letter": "B",
+                    "value": "Spend time with a few people that I know. It's about quality not quanitity."
+                },
+                {
+                    "id": 15,
+                    "letter": "C",
+                    "value": "Keep to myself. You can find me by the punch bowl."
+                }
+            ]
+        }
+    ],
+    "results": [
+        {
+            "id": 1,
+            "title": "Extrovert",
+            "description": "Extroverts tend to be quite outgoing and talkative. They enjoy spending time with other people, and feel energized in social situations. Oftentimes, extroverts like being the focus of attention. As an extrovert, people probably describe you as friendly and outgoing. You love meeting new people and have no problem making new friends. Spending time with others leaves you feeling energized and inspired."
+        },
+        {
+            "id": 2,
+            "title": "Introvert",
+            "description": "Introverts tend to enjoy solitude and spending quiet time alone. They expend energy in social situations and prefer not to be the center of attention. In general, people might describe you as quiet. You probably prefer to spend time alone or with a small group of close friends and family. You may dislike busy social events such as parties and often feel drained after spending a lot of time around people you do not know well."
+        }
+    ] 
+}

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Answer, Question } from '../../model';
+import { StoreService } from 'src/app/state/store.service';
 
 @Component({
   selector: 'app-test',
@@ -6,39 +9,62 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit {
+
+  questions: Question[] = [];
+  currentQuestion: Partial<Question> = {};
   currentQuestionCount = 1;
-  totalQuestions = 10;
-  currentAnswer: any = undefined;
-  question = 'You’re really busy at work and a colleague is telling you their life story and personal woes. You'
+  totalQuestions = this.questions.length;
+  currentAnswer: any = {};
+  previousAnswer: any = {};
+  answers: Answer[] = [];
+  storeSub: Subscription;
 
-  options = [
-    {
-      letter: 'A',
-      value: "Don't dare to interrupt them"
-    },
-    {
-      letter: 'B',
-      value: "Don't dare to interrupt them"
+  constructor(private readonly storeService: StoreService) {
+    this.storeSub = this.storeService.stateChanged.subscribe(state => {
+      if (state) {
+        console.log({state: state});
+        this.currentQuestion = state.currentQuestion;
+        this.totalQuestions = state.questionsCount;
+        this.answers = state.answers;
+        this.currentQuestionCount = this.answers.length !== this.totalQuestions ? state.currentQuestionCount : this.currentQuestionCount;
+      }
     }
-  ]
-
-  constructor() { }
+    )
+  }
 
   ngOnInit(): void {
-    console.log({options: this.options})
+    this.storeService.getQuestions();
+    console.log({currentQuestion: this.currentQuestion})
   }
 
   next() {
-    console.log('next')
+    this.storeService.setCurrentAnswer(this.currentAnswer);
+    this.storeService.next();
+    this.previousAnswer = this.currentAnswer;
+    this.currentAnswer = {};
   }
 
   previous() {
-    console.log('previous')
+    this.currentAnswer = this.previousAnswer;
+    this.storeService.previous();
   }
 
   optionSelected(item: any) {
     console.log(item)
-    this.currentAnswer = item;
+    this.currentAnswer = {
+      id: item.id,
+      questionId: this.currentQuestion.id,
+      optionId: item.id
+    };
+  }
+
+  finish() {
+    console.log('finish')
+    
+  }
+
+  startAgain() {
+    this.storeService.reset();
   }
 
 }
