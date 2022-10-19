@@ -60,18 +60,6 @@ export class StoreService extends ObservableStore<AppStore> {
     })
   }
 
-  previous(): void {
-    const currentQuestionCount = this.getState().currentQuestionCount;
-    const questions = this.getState().questions;
-    const currentQuestion = questions[currentQuestionCount - 2];
-    const answers = this.getState().answers;
-    this.setState({
-      currentQuestion: currentQuestion,
-      currentQuestionCount: currentQuestionCount - 1,
-      answers: [...answers.slice(0, currentQuestionCount - 1)]
-    })
-  }
-
   reset(): void {
     this.setState({
       currentQuestion: this.getState().questions[0],

@@ -16,16 +16,9 @@
         
         <div class="button-container">
             <div *ngIf="answers.length !== totalQuestions">
-                <div *ngIf="currentQuestionCount == 1" class="btn-single">
+                <div class="btn-single">
                     <button *ngIf="currentAnswer.optionId" class="button-active" (click)="next()">Next question</button>
-                    <button *ngIf="!currentAnswer.optionId" class="button-disabled" (click)="next()">Next question</button>
-                </div>
-                <div *ngIf="currentQuestionCount > 1" class="btn-double">
-                    <button class="button-previous" (click)="previous()">Previous</button>
-                    <button *ngIf="currentAnswer.optionId && currentQuestionCount !== totalQuestions" class="button-next-active" (click)="next()">Next question</button>
-                    <button *ngIf="currentAnswer.optionId && currentQuestionCount === totalQuestions" class="button-next-active" (click)="next()">Submit</button>
-                    <button *ngIf="!currentAnswer.optionId && currentQuestionCount !== totalQuestions" class="button-next-disabled">Next question</button>
-                    <button *ngIf="!currentAnswer.optionId && currentQuestionCount === totalQuestions" class="button-next-disabled">Submit</button>
+                    <button *ngIf="!currentAnswer.optionId" class="button-disabled" (click)="next()" disabled>Next question</button>
                 </div>
             </div>
             

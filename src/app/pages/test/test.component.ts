@@ -46,11 +46,6 @@ export class TestComponent implements OnInit {
     this.currentAnswer = this.currentQuestionCount !== this.answers.length ? {} : this.currentAnswer;
   }
 
-  previous() {
-    this.currentAnswer = this.previousAnswer;
-    this.storeService.previous();
-  }
-
   optionSelected(item: any) {
     console.log(item)
     this.currentAnswer = {
