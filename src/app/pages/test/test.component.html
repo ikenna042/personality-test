@@ -17,8 +17,8 @@
         <div class="button-container">
             <div *ngIf="answers.length !== totalQuestions">
                 <div class="btn-single">
-                    <button *ngIf="currentAnswer.optionId" class="button-active" (click)="next()">Next question</button>
-                    <button *ngIf="!currentAnswer.optionId" class="button-disabled" (click)="next()" disabled>Next question</button>
+                    <button *ngIf="currentAnswer.optionId" class="button-active" (click)="next()"> {{ btnLabel }} </button>
+                    <button *ngIf="!currentAnswer.optionId" class="button-disabled" (click)="next()" disabled>{{ btnLabel }}</button>
                 </div>
             </div>
             

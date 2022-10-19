@@ -9,7 +9,7 @@ import { TestComponent } from './test.component';
   declarations: [TestComponent],
   imports: [
     CommonModule,
-    TestRoutingModule
+    TestRoutingModule,
   ]
 })
 export class TestModule { }
