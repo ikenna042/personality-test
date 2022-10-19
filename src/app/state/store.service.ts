@@ -16,8 +16,8 @@ export class StoreService extends ObservableStore<AppStore> {
     this.setState(AppState, 'INITIALIZED');
   }
 
-  async getQuestions(): Promise<void> {
-    this.http.get<any>('/assets/data.json')
+  async getQuestions(): Promise<any> {
+    return this.http.get<any>('/assets/data.json')
       .subscribe({
         next: (data) => {
           this.setState({
@@ -30,6 +30,7 @@ export class StoreService extends ObservableStore<AppStore> {
         },
         error: (err: any) => {
           console.log(err);
+          return err;
         }
       });    
   }

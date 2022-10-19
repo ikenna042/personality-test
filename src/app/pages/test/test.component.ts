@@ -19,6 +19,7 @@ export class TestComponent implements OnInit {
   previousAnswer: any = {};
   answers: Answer[] = [];
   storeSub: Subscription;
+  btnLabel = 'Next Question';
 
   constructor(private readonly storeService: StoreService,
               private readonly router: Router) {
@@ -29,6 +30,7 @@ export class TestComponent implements OnInit {
         this.totalQuestions = state.questionsCount;
         this.answers = state.answers;
         this.currentQuestionCount = this.answers.length !== this.totalQuestions ? state.currentQuestionCount : this.currentQuestionCount;
+        this.btnLabel = state.currentQuestionCount === state.questions.length? 'Submit' : 'Next Question';
       }
     }
     )
